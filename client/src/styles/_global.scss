@@ -1,0 +1,68 @@
+html {
+  font-size: 10px;
+  body {
+    margin: 0;
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: $title-color;
+    font-size: 1.8rem;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+    img {
+      max-width: 100%;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #e22104;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 9px 25px;
+      text-transform: capitalize;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+    }
+
+    .button:hover {
+      background-color: red;
+      color: #fff;
+    }
+
+    .button-header {
+      padding: 7px 26px;
+      border-radius: 0;
+    }
+
+    .button-hero {
+      align-self: center;
+    }
+
+    .button-shadow {
+      box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
+    }
+
+    button.button {
+      border: 0;
+    }
+
+    .button-contactForm {
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}

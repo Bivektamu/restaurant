@@ -1,0 +1,14 @@
+@mixin transition($args: all 0.3s ease 0s) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin filter($filter-value) {
+  filter: ($filter-value);
+  -o-filter: ($filter-value);
+  -ms-filter: ($filter-value);
+  -moz-filter: ($filter-value);
+  -webkit-filter: ($filter-value);
+}
