@@ -109,157 +109,177 @@ header {
   }
 }
 
-section {
-  display: block;
-  overflow: auto;
+
+#main {
   width: calc(100% - 18rem);
 
-  .hero-wrapper {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  section {
+    display: block;
+    overflow: auto;
     max-width: 144rem;
+    width: calc(100% - 20rem);
     margin: auto;
 
-    .hero-left {
-      text-align: left;
-      margin-top: 0;
-      margin-bottom: 0;
-      width: 53%;
-      padding: 0 5%;
-      position: relative;
+    &.hero-banner {
 
-      .hero-banner__video {
-        background: url(./img/play-icon.png) left center no-repeat;
-        margin-left: 35px;
-        padding: 12px 5px 12px 45px !important;
-        font-size: 14px;
-        font-weight: 600;
-        color: #2f2d4e;
-      }
+      overflow: visible;
 
-      .hero-banner__video img {
-        margin-right: 7px;
-      }
 
-      .hero-title {
-        font-size: 4.5rem;
-        font-weight: 600;
-        margin-bottom: 25px;
-        line-height: 0.929;
-        font-family: 'Josefin Sans';
-      }
-
-      .hero-info {
-        padding-top: 60px;
-        list-style: none;
-        display: block;
-        &:after {
-          content: '';
-          display: block;
-          clear: both;
-          display: table;
-        }
-
-        li {
-          float: left;
-          border-right: 1px solid #eeeeee;
-          margin-bottom: 0;
-          text-align: center;
-          padding-right: 2rem;
-          padding-left: 2rem;
-
-          h4 {
-            font-size: 18px;
-            margin-top: 15px;
-          }
-
-          &:first-child {
-            padding-left: 0;
-          }
-          &:last-child {
-            border-right: 0;
-            padding-right: 0;
-          }
-        }
-      }
-      .social-icons {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: -3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        li {
-          margin-bottom: 35px;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-
-      .social-icons i,
-      .social-icons span {
-        font-size: 2.5rem;
-        color: $title-color;
-      }
-
-      .social-icons a:hover i,
-      .social-icons a:hover span {
-        color: #e22104;
-      }
-    }
-
-    .hero-right {
-      width: 33%;
-      float: left;
-
-      .slick-dots {
-        z-index: 1;
-        width: auto;
-        display: inline-block;
-        top: 0;
-        bottom: 0;
-        right: -4rem;
+      .hero-wrapper {
+        position: relative;
+        min-height: 100vh;
         margin: auto;
-        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        li {
-          display: block;
-          margin: 1rem 0;
-          width: 2rem;
-          height: 2rem;
-          button {
-            width: 2rem;
-            height: 2rem;
-            position: relative;
-            border-radius: 100%;
+        .hero-left {
+          text-align: left;
+          margin-top: 0;
+          margin-bottom: 0;
+          width: 60%;
+          padding-right: 5rem;
+          position: relative;
 
-            &:before {
-              width: 1.5rem;
-              height: 1.5rem;
-              margin: auto;
-              left: 0;
-              right: 0;
-              font-size: 1rem;
-              top: -1px;
+
+          .hero-banner__video {
+            background: url(./play-icon.png) left center no-repeat;
+            margin-left: 35px;
+            padding: 12px 5px 12px 45px !important;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2f2d4e;
+          }
+
+          .hero-banner__video img {
+            margin-right: 7px;
+          }
+
+
+
+          .hero-info {
+            padding-top: 60px;
+            list-style: none;
+            display: block;
+
+            &:after {
+              content: '';
+              display: block;
+              clear: both;
+              display: table;
+            }
+
+            li {
+              float: left;
+              border-right: 1px solid #eeeeee;
+              margin-bottom: 0;
+              text-align: center;
+              padding-right: 2rem;
+              padding-left: 2rem;
+
+              h4 {
+                font-size: 18px;
+                margin-top: 15px;
+              }
+
+              &:first-child {
+                padding-left: 0;
+              }
+
+              &:last-child {
+                border-right: 0;
+                padding-right: 0;
+              }
             }
           }
-          &.slick-active {
-            button {
-              border: 2px solid $red-color;
-              &:before {
-                color: $red-color;
-                font-size: 0.8rem;
+
+          .social-icons {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -7.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            li {
+              margin-bottom: 35px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          .social-icons i,
+          .social-icons span {
+            font-size: 2.5rem;
+            color: $title-color;
+          }
+
+          .social-icons a:hover i,
+          .social-icons a:hover span {
+            color: #e22104;
+          }
+        }
+
+        .hero-right {
+          width: 40%;
+          float: right;
+          padding-left: 5rem;
+
+          .slick-slider {
+            // padding-right: 3rem;
+
+            .slick-dots {
+              z-index: 1;
+              width: auto;
+              display: inline-block;
+              top: 0;
+              bottom: 0;
+              right: -7.5rem;
+              margin: auto;
+              height: 10rem;
+
+              li {
+                display: block;
+                margin: 1rem 0;
+                width: 2rem;
+                height: 2rem;
+
+                button {
+                  width: 2rem;
+                  height: 2rem;
+                  position: relative;
+                  border-radius: 100%;
+
+                  &:before {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    font-size: 1rem;
+                    top: -1px;
+                  }
+                }
+
+                &.slick-active {
+                  button {
+                    border: 2px solid $red-color;
+
+                    &:before {
+                      color: $red-color;
+                      font-size: 0.8rem;
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
     }
+
   }
 }

@@ -1,5 +1,6 @@
 html {
   font-size: 10px;
+
   body {
     margin: 0;
     font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
@@ -11,10 +12,12 @@ html {
       box-sizing: border-box;
       margin: 0;
     }
+
     a {
       text-decoration: none;
       color: $primary-color;
     }
+
     img {
       max-width: 100%;
     }
@@ -63,6 +66,22 @@ html {
     ul {
       list-style: none;
       padding: 0;
+    }
+
+    .title {
+      font-size: 4.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      line-height: 0.929;
+      font-family: 'Josefin Sans';
+    }
+
+    .small-title {
+      color: $ash-color;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      display: block;
+
     }
   }
 }

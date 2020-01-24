@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = () => {
+const Carousel = ({ slides }) => {
   const settings = {
     swipeToSlide: true,
     dots: true,
@@ -19,27 +19,17 @@ const Carousel = () => {
     autoplay: false
   };
 
-  function importAll(r) {
-    return r.keys().map(r);
-  }
-
-  const images = importAll(
-    require.context('../img/home/', false, /\.(jpe?g)$/)
-  );
-
-  const slides = images.map(image => {
+  const carousel_Slides = slides.map(({ image, title }) => {
     const id = uuid.v4();
 
     return (
       <div key={id}>
-        <img src={image} alt='slide' />
+        <img src={image} alt={title} />
       </div>
     );
   });
 
-  console.log(images);
-
-  return <Slider {...settings}>{slides}</Slider>;
+  return <Slider {...settings}>{carousel_Slides}</Slider>;
 };
 
 export default Carousel;

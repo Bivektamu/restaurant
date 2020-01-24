@@ -2,61 +2,57 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import logo from '../img/logo.png';
-
-import icon1 from '../img/nav-icon1.png';
-import icon2 from '../img/nav-icon2.png';
-import icon3 from '../img/nav-icon3.png';
-import icon4 from '../img/nav-icon4.png';
-import icon5 from '../img/nav-icon5.png';
-import icon6 from '../img/nav-icon6.png';
+import data from '../data';
 
 const SideBar = props => {
+  const navImg = data.filter(({ section }) => section === 'nav');
+  const { logo, icons } = navImg[0];
+
   return (
     <header className='fixed-menu'>
       <div className='menu-header'>
         <div id='logo'>
-          <img src={logo} alt='' />
+          <img src={logo.image} alt={logo.title} />
         </div>
       </div>
       <div className='nav-wraper'>
         <div className='navbar'>
           <ul className='navbar-nav'>
             <li className='nav-item'>
+              <Link className='nav-link' to='contact.html'>
+                <img src={icons[0].image} alt={icons[0].title} />
+                contact
+              </Link>
+            </li>
+
+            <li className='nav-item'>
               <Link className='nav-link active' to='index.html'>
-                <img src={icon1} alt='' /> home
+                <img src={icons[1].image} alt={icons[1].title} /> home
               </Link>
             </li>
             <li className='nav-item'>
               <Link className='nav-link' to='about-us.html'>
-                <img src={icon2} alt='' />
+                <img src={icons[2].image} alt={icons[2].title} />
                 about
               </Link>
             </li>
             <li className='nav-item'>
               <Link className='nav-link' to='menu.html'>
-                <img src={icon3} alt='' />
+                <img src={icons[3].image} alt={icons[3].title} />
                 menu
               </Link>
             </li>
             <li className='nav-item'>
               <Link className='nav-link' to='book-table.html'>
-                <img src={icon4} alt='' />
+                <img src={icons[4].image} alt={icons[4].title} />
                 Book Table
               </Link>
             </li>
 
             <li className='nav-item'>
               <Link className='nav-link' to='blog.html'>
-                <img src={icon5} alt='' />
+                <img src={icons[5].image} alt={icons[5].title} />
                 blog
-              </Link>
-            </li>
-
-            <li className='nav-item'>
-              <Link className='nav-link' to='contact.html'>
-                <img src={icon6} alt='' />
-                contact
               </Link>
             </li>
           </ul>
