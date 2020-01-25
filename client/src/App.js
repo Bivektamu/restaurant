@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './home/Home';
 import SideBar from './layout/SideBar';
+import Footer from './layout/Footer';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route exact path='/' component={Home} />
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }

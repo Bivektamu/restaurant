@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 import Carousel from './Carousel';
 
 const Banner = ({ icons, slides }) => {
-  console.log(icons[0].image);
   return (
     <section className='hero-banner'>
       <div className='hero-wrapper'>
         <div className='hero-left'>
-          <h1 className='title'>
+          <h1 className='heading'>
             Foods the <br /> most precious things
           </h1>
           <div className='d-sm-flex flex-wrap'>

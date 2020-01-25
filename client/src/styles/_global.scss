@@ -1,87 +1,142 @@
 html {
   font-size: 10px;
+}
 
-  body {
-    margin: 0;
-    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    color: $title-color;
-    font-size: 1.8rem;
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  color: $dark-blue;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
-    a {
-      text-decoration: none;
-      color: $primary-color;
-    }
+a {
+  text-decoration: none;
+  color: $dark-blue;
+}
 
-    img {
-      max-width: 100%;
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    .button {
-      display: inline-block;
-      background-color: #e22104;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 30px;
-      padding: 9px 25px;
-      text-transform: capitalize;
-      -webkit-transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      transition: all 0.3s ease 0s;
-    }
+p {
+  color: $black;
+  margin-bottom: 2rem;
+}
 
-    .button:hover {
-      background-color: red;
-      color: #fff;
-    }
+#main,
+footer {
+  width: calc(100% - 18rem);
 
-    .button-header {
-      padding: 7px 26px;
-      border-radius: 0;
-    }
+}
 
-    .button-hero {
-      align-self: center;
-    }
 
-    .button-shadow {
-      box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
-    }
+section {
+  display: block;
+  overflow: auto;
+  max-width: 144rem;
+  width: calc(100% - 20rem);
+  margin: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 
-    button.button {
-      border: 0;
-    }
+.button {
+  display: inline-block;
+  background-color: #e22104;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 9px 25px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 
-    .button-contactForm {
-      border-radius: 5px;
-    }
+.button:hover {
+  background-color: $red;
+  color: #fff;
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+.button-header {
+  padding: 7px 26px;
+  border-radius: 0;
+}
 
-    .title {
-      font-size: 4.5rem;
-      font-weight: 600;
-      margin-bottom: 25px;
-      line-height: 0.929;
-      font-family: 'Josefin Sans';
-    }
+.button-hero {
+  align-self: center;
+}
 
-    .small-title {
-      color: $ash-color;
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-      display: block;
+.button-shadow {
+  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
+}
 
-    }
-  }
+button.button {
+  border: 0;
+  font-family: 'Josefin Sans';
+}
+
+.button-contactForm {
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.heading {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  line-height: 0.929;
+  font-family: 'Josefin Sans';
+}
+
+.small-heading {
+  color: $black;
+  margin-bottom: 2rem;
+  display: block;
+  font-weight: 400;
+
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 2rem 0;
+  text-transform: capitalize;
+}
+
+.grid-3,
+.grid-2 {
+  display: grid;
+  display: -moz-grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3rem;
+}
+
+.grid-2 {
+  grid-template-columns: 2fr 2fr;
+}
+
+.flex-2 {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+}
+
+.ml-2 {
+  margin-left: 3rem;
 }

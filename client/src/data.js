@@ -5,15 +5,15 @@ export default [
     icons: [
       {
         image: './img/banner/fas-service-icon.png',
-        title: 'service-icon'
+        title: 'fast service'
       },
       {
         image: './img/banner/fresh-food-icon.png',
-        title: 'food-icon'
+        title: 'fresh food'
       },
       {
         image: './img/banner/support-icon.png',
-        title: 'support-icon'
+        title: '24/7 support'
       }
     ],
 
@@ -34,15 +34,56 @@ export default [
     popular: [
       {
         image: './img/home/p1.jpg',
-        title: 'popular product'
+        title: 'popular product',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
         image: './img/home/p2.jpg',
-        title: 'popular product'
+        title: 'popular product',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
         image: './img/home/p3.jpg',
-        title: 'popular product'
+        title: 'popular product',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      }
+    ],
+    offer: {
+      image: './img/home/offer.jpg',
+      title: 'Italian Pizza Offer',
+      description: '50% OFF'
+    },
+    reservation: {
+      image: './img/home/reservation.jpg',
+      title: 'MLorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    recent: [
+      {
+        image: './img/home/b1.jpg',
+        title: 'Lorem ipsum dolor sit amet',
+        date: '2019/02/19',
+        category: 'food news',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        image: './img/home/b2.jpg',
+        title: 'Lorem ipsum dolor sit amet',
+        date: '2019/02/19',
+        category: 'food news',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        image: './img/home/b3.jpg',
+        title: 'Lorem ipsum dolor sit amet',
+        date: '2019/02/19',
+        category: 'food news',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       }
     ]
   },
