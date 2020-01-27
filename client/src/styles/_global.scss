@@ -29,6 +29,7 @@ img {
 p {
   color: $black;
   margin-bottom: 2rem;
+  font-family: 'Poppins';
 }
 
 #main,
@@ -127,7 +128,7 @@ ul {
 }
 
 .grid-2 {
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .flex-2 {
@@ -139,4 +140,43 @@ ul {
 
 .ml-2 {
   margin-left: 3rem;
+}
+
+
+.slick-slider {
+
+  .slick-dots {
+    z-index: 1;
+
+
+    li {
+      button {
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        border-radius: 100%;
+
+        &:before {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin: auto;
+          left: 0;
+          right: 0;
+          font-size: 1rem;
+          top: -1px;
+        }
+      }
+
+      &.slick-active {
+        button {
+          border: 2px solid $red;
+
+          &:before {
+            color: $red;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
 }

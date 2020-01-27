@@ -3,10 +3,10 @@ import React, { Fragment } from 'react';
 import Banner from './Banner';
 import Popular from './Popular';
 import Offer from './Offer';
-import Reservation from './Reservation';
+import Reservation from '../layout/Reservation';
 import Blog from './Blog';
 
-import data from '../data';
+import data from '../../data';
 
 const Home = () => {
   const homeImg = data.filter(({ section }) => section === 'home');

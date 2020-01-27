@@ -8,7 +8,7 @@ const Offer = ({ offer }) => {
     <section id='offer'>
       <div className='grid-2'>
         <div>
-          <img src={image} />
+          <img src={image} alt={title} />
         </div>
         <div>
           <div className='wrapper'>

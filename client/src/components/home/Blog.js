@@ -6,7 +6,7 @@ const Blog = ({ recent }) => {
     <section id='blog'>
       <h5 className='small-heading'>Recent News</h5>
       <h2 className='heading'>Latest From Blog</h2>
-      <Card items={recent} />
+      <Card from='blog' items={recent} />
     </section>
   );
 };

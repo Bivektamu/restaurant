@@ -6,7 +6,7 @@ const Popular = ({ popular }) => {
     <section id='popular'>
       <h5 className='small-heading'>Popular Dishes</h5>
       <h2 className='heading'>Our Exclusive Items</h2>
-      <Card items={popular} />
+      <Card from='popular' items={popular} />
     </section>
   );
 };

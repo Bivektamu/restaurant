@@ -224,55 +224,28 @@ header {
       float: right;
       padding-left: 5rem;
 
+
       .slick-slider {
-        // padding-right: 3rem;
+
 
         .slick-dots {
-          z-index: 1;
-          width: auto;
-          display: inline-block;
           top: 0;
           bottom: 0;
           right: -7.5rem;
           margin: auto;
           height: 10rem;
+          width: auto;
+          display: inline-block;
 
           li {
             display: block;
             margin: 1rem 0;
             width: 2rem;
             height: 2rem;
-
-            button {
-              width: 2rem;
-              height: 2rem;
-              position: relative;
-              border-radius: 100%;
-
-              &:before {
-                width: 1.5rem;
-                height: 1.5rem;
-                margin: auto;
-                left: 0;
-                right: 0;
-                font-size: 1rem;
-                top: -1px;
-              }
-            }
-
-            &.slick-active {
-              button {
-                border: 2px solid $red;
-
-                &:before {
-                  color: $red;
-                  font-size: 0.8rem;
-                }
-              }
-            }
           }
         }
       }
+
     }
   }
 }
@@ -311,7 +284,9 @@ header {
 }
 
 #popular,
-#blog {
+#chefs,
+#blog,
+#testimonials {
   overflow: visible;
 }
 
@@ -377,6 +352,94 @@ header {
     }
   }
 }
+
+#chefs .wrapper {
+  text-align: center;
+
+  .social-links {
+    display: flex;
+    justify-content: space-evenly;
+
+    a {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      border: 1px solid $light-color;
+      position: relative;
+      transition: 0.3s ease;
+
+      i {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1.6rem;
+        height: 1.6rem;
+        color: $black;
+      }
+
+      &:hover {
+        background: $orange;
+        border-color: $orange;
+
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+#testimonials {
+  background: $light-color;
+  width: 100%;
+  max-width: 100%;
+
+  .wrapper {
+    max-width: 144rem;
+    width: calc(100% - 20rem);
+    margin: auto;
+
+
+
+
+
+
+    .grid-2 {
+      grid-template-columns: 1fr 3fr;
+
+      &>* {
+        padding: 3rem;
+      }
+
+      img {
+        border-right: 2px solid $black;
+      }
+
+      .car-info {
+        padding: 3rem;
+
+        p {
+          font-size: 2rem;
+        }
+
+        .title {
+          span {
+            color: $black;
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
+        }
+      }
+
+
+    }
+  }
+
+}
+
 
 footer {
   background: $orange;

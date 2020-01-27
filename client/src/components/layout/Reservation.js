@@ -14,6 +14,8 @@ const Reservation = ({ reservation }) => {
   );
 };
 
-Reservation.propTypes = {};
+Reservation.propTypes = {
+  reservation: PropTypes.object.isRequired
+};
 
 export default Reservation;
