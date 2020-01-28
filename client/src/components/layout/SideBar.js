@@ -34,7 +34,6 @@ const SideBar = props => {
                 <img src={icons[1].image} alt={icons[1].title} /> about
               </NavLink>
             </li>
-            {/*           
             <li className='nav-item'>
               <NavLink className='nav-link' to='/menu'>
                 <img src={icons[2].image} alt={icons[2].title} />
@@ -60,7 +59,6 @@ const SideBar = props => {
                 contact
               </NavLink>
             </li>
-    */}
           </ul>
         </div>
       </div>

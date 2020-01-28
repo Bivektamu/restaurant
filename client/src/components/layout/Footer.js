@@ -16,31 +16,31 @@ function Footer() {
             <h3>Open Hours</h3>
             <p>
               Monday
-              <span className='ml-2'>10:00-24:00</span>
+              <span className='ml-2'>10:00 - 24:00</span>
             </p>
             <p>
               Tuesday
-              <span className='ml-2'>10:00-24:00</span>
+              <span className='ml-2'>10:00 - 24:00</span>
             </p>
             <p>
               Wednesday
-              <span className='ml-2'>10:00-24:00</span>
+              <span className='ml-2'>10:00 - 24:00</span>
             </p>
             <p>
               Thursday
-              <span className='ml-2'>10:00-24:00</span>
+              <span className='ml-2'>10:00 - 24:00</span>
             </p>
             <p>
               Friday
-              <span className='ml-2'>10:00-24:00</span>
+              <span className='ml-2'>10:00 - 24:00</span>
             </p>
             <p>
               Saturday
-              <span className='ml-2'>10:00-20:00</span>
+              <span className='ml-2'>10:00 - 20:00</span>
             </p>
             <p>
               Sunday
-              <span className='ml-2'>10:00-20:00</span>
+              <span className='ml-2'>10:00 - 20:00</span>
             </p>
           </div>
         </div>

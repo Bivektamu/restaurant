@@ -257,8 +257,7 @@ header {
   padding: 3rem;
   display: block;
   background: $pink;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  @include transition();
 }
 
 .grid-3 {
@@ -366,7 +365,7 @@ header {
       border-radius: 100%;
       border: 1px solid $light-color;
       position: relative;
-      transition: 0.3s ease;
+      @include transition();
 
       i {
         position: absolute;
@@ -438,6 +437,52 @@ header {
     }
   }
 
+}
+
+#menus {
+  overflow: visible;
+  padding-bottom: 10rem;
+
+  .grid {
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 2rem;
+    align-items: center;
+    background: $pink;
+    padding: 3rem;
+    @include transition();
+
+    &:hover {
+      @include boxshadow();
+      background: $white;
+
+    }
+
+    &>img {
+      width: 100%;
+    }
+
+    .wrapper {
+      position: relative;
+      padding-right: 3rem;
+
+      .title {
+        margin-top: 0;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+      }
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $orange;
+      }
+    }
+
+  }
 }
 
 

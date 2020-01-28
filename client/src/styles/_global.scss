@@ -118,6 +118,12 @@ ul {
   text-transform: capitalize;
 }
 
+.grid {
+  display: grid;
+  display: -moz-grid;
+  display: -ms-grid;
+}
+
 .grid-3,
 .grid-2 {
   display: grid;
@@ -125,6 +131,7 @@ ul {
   display: -ms-grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
 }
 
 .grid-2 {

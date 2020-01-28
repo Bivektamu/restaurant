@@ -194,36 +194,47 @@ export default [
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       }
-    ],
+    ]
+  },
+  {
+    section: 'menu',
 
-    reservation: {
-      image: './img/home/reservation.jpg',
-      title: 'MLorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },
-    recent: [
+    menus: [
       {
-        image: './img/home/b1.jpg',
-        title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
-        category: 'food news',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
       },
       {
-        image: './img/home/b2.jpg',
-        title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
-        category: 'food news',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
       },
       {
-        image: './img/home/b3.jpg',
-        title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
-        category: 'food news',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
+      },
+      {
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
+      },
+      {
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
+      },
+      {
+        image: './img/menu/menu1.png',
+        title: 'lorem ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        price: 32
       }
     ]
   }
