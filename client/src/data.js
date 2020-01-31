@@ -237,5 +237,51 @@ export default [
         price: 32
       }
     ]
+  },
+  {
+    section: 'blogs',
+    blogs: [
+      {
+        title: 'lorem ipsum',
+        image: './img/blogs/b1.png',
+        name: 'user',
+        date: '2019/02/19',
+        category: 'food news',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        comments: [
+          {
+            date: '2019/02/19',
+            text: 'this is first comment',
+            name: 'user'
+          },
+          {
+            date: '2019/02/19',
+            text: 'this is second comment',
+            name: 'user 2'
+          }
+        ],
+        likes: []
+      },
+
+      {
+        title: 'lorem ipsum',
+        image: './img/blogs/b2.png',
+        name: 'user',
+        date: '2019/02/19',
+        category: 'food news',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        comments: [],
+        likes: [
+          {
+            user: 'user'
+          },
+          {
+            user: 'user 2'
+          }
+        ]
+      }
+    ]
   }
 ];

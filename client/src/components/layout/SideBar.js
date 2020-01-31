@@ -48,9 +48,9 @@ const SideBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink exact className='nav-link' to='/blog'>
+              <NavLink exact className='nav-link' to='/blogs'>
                 <img src={icons[4].image} alt={icons[4].title} />
-                blog
+                blogs
               </NavLink>
             </li>
 
