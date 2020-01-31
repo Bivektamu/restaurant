@@ -304,6 +304,10 @@ header {
 
     .button {
       border: 1px solid $white;
+
+      &:hover {
+        background: $white;
+      }
     }
 
     .heading {
@@ -332,6 +336,10 @@ header {
 
     .heading {
       margin: 2rem 0 4rem;
+    }
+
+    .button:hover {
+      background: $white;
     }
 
   }
@@ -485,6 +493,60 @@ header {
   }
 }
 
+
+#booking-form {
+  background: $light-color;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    margin: 4rem auto;
+  }
+
+  form {
+    max-width: 50rem;
+    width: calc(100% - 20rem);
+    margin: auto;
+
+    .wrapper {
+      margin-bottom: 3rem;
+      display: grid;
+      display: -ms-grid;
+      display: -moz-grid;
+      grid-template-columns: 1fr 5fr;
+
+      label {
+        padding: 1.5rem 0;
+        text-transform: capitalize;
+
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        border: 1px solid $light-color;
+        text-transform: capitalize;
+        border-radius: 5px;
+        color: $black;
+      }
+
+      option {
+        padding: 1.5rem 1rem;
+        display: block;
+      }
+    }
+
+    .submit {
+      display: block;
+      width: 20rem;
+      margin: 4rem auto 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+    }
+  }
+}
 
 footer {
   background: $orange;

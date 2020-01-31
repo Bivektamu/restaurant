@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import data from '../../data';
 
@@ -19,7 +19,7 @@ const SideBar = props => {
         <div className='navbar'>
           <ul className='navbar-nav'>
             <li className='nav-item'>
-              <NavLink className='nav-link' activeClassName='active' to='/'>
+              <NavLink exact className='nav-link' to='/'>
                 <img src={icons[0].image} alt={icons[0].title} />
                 home
               </NavLink>
@@ -27,6 +27,7 @@ const SideBar = props => {
 
             <li className='nav-item'>
               <NavLink
+                exact
                 className='nav-link'
                 activeClassName='active'
                 to='/about'
@@ -35,26 +36,26 @@ const SideBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/menu'>
+              <NavLink exact className='nav-link' to='/menu'>
                 <img src={icons[2].image} alt={icons[2].title} />
                 menu
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/book'>
+              <NavLink exact className='nav-link' to='/booking'>
                 <img src={icons[3].image} alt={icons[3].title} />
                 Book Table
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/blog'>
+              <NavLink exact className='nav-link' to='/blog'>
                 <img src={icons[4].image} alt={icons[4].title} />
                 blog
               </NavLink>
             </li>
 
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/contact'>
+              <NavLink exact className='nav-link' to='/contact'>
                 <img src={icons[5].image} alt={icons[5].title} />
                 contact
               </NavLink>

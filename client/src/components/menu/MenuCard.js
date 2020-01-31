@@ -2,11 +2,10 @@ import React from 'react';
 import uuid from 'uuid';
 
 const Menus = ({ menus }) => {
-  console.log(menus);
   const mennuItems = menus.map(({ image, title, description, price }) => {
     const id = uuid.v4();
     return (
-      <div className='grid'>
+      <div className='grid' key={id}>
         <img src={image} alt={title} />
         <div className='wrapper'>
           <h3 className='title'>{title}</h3>
