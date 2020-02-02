@@ -32,6 +32,10 @@ p {
   font-family: 'Poppins';
 }
 
+.dark-blue {
+  color: $dark-blue;
+}
+
 #main,
 footer {
   width: calc(100% - 18rem);
@@ -175,10 +179,10 @@ ul {
 
       &.slick-active {
         button {
-          border: 2px solid $red;
+          border: 2px solid $orange;
 
           &:before {
-            color: $red;
+            color: $orange;
             font-size: 0.8rem;
           }
         }

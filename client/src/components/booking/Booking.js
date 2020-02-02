@@ -8,7 +8,7 @@ import data from '../../data';
 const Booking = () => {
   const homeImg = data.filter(({ section }) => section === 'home');
 
-  const { icons, carousel, reservation } = homeImg[0];
+  const { icons, carousel } = homeImg[0];
 
   return (
     <Fragment>

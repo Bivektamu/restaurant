@@ -95,7 +95,7 @@ header {
 
             &:hover,
             &.active {
-              background: $red;
+              background: $orange;
               color: #fff;
               box-shadow: 0 20px 20px rgba(244, 47, 44, 0.1);
 
@@ -249,7 +249,7 @@ header {
 }
 
 .grid-3 {
-  & > div {
+  &>div {
     img {
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
@@ -394,7 +394,7 @@ header {
     .grid-2 {
       grid-template-columns: 1fr 3fr;
 
-      & > * {
+      &>* {
         padding: 3rem;
       }
 
@@ -438,7 +438,7 @@ header {
       background: $white;
     }
 
-    & > img {
+    &>img {
       width: 100%;
     }
 
@@ -484,11 +484,12 @@ header {
       display: grid;
       display: -ms-grid;
       display: -moz-grid;
-      grid-template-columns: 1fr 5fr;
+      grid-template-columns: 1fr 4fr;
 
       label {
         padding: 1.5rem 0;
         text-transform: capitalize;
+        font-family: 'Poppins';
       }
 
       input,
@@ -499,6 +500,7 @@ header {
         text-transform: capitalize;
         border-radius: 5px;
         color: $black;
+        font-family: 'Poppins';
       }
 
       option {
@@ -520,19 +522,24 @@ header {
 #blogs {
   overflow: visible;
 
-  .grid-2 > div {
+
+
+  .grid-2>div {
     .img-wrap {
       overflow: hidden;
+      display: block;
+
       img {
         @include transition;
       }
     }
 
     &:hover {
-      & > .wrapper {
+      &>.wrapper {
         @include boxshadow;
         background: $white;
       }
+
       img {
         transform: scale(1.1);
       }
@@ -557,20 +564,119 @@ header {
       font-size: 2rem;
       border-radius: 5px;
     }
+
     .title {
       margin-top: 0;
     }
-    .cat-likes {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: center;
-      & > * {
-        margin-bottom: 1rem;
+
+
+  }
+}
+
+.cat-likes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &>* {
+    margin-bottom: 1rem;
+  }
+
+  .cat {
+    text-transform: capitalize;
+    color: $orange;
+  }
+}
+
+#blog-details {
+  .back {
+    color: $orange;
+    margin-bottom: 2rem;
+    display: block;
+    font-weight: 500;
+  }
+
+  .cat-likes {
+    max-width: 50rem;
+    margin-bottom: 4rem;
+
+    button {
+      width: 9rem;
+    }
+  }
+
+  .description {
+    margin-top: 4rem;
+  }
+}
+
+#comments {
+  width: 100%;
+  max-width: 100%;
+  background: $light-color;
+
+  .wrapper {
+    max-width: 144rem;
+    width: calc(100% - 20rem);
+    margin: auto;
+
+    form {
+      width: 100%;
+      margin-bottom: 6rem;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid #DADDE1;
+
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem;
+        border: 1px solid #DADDE1;
+        border-radius: 5px;
+        height: 15rem;
+        color: $black;
+        font-size: 1.4rem;
+        font-family: 'Poppins';
       }
-      .cat {
-        text-transform: capitalize;
-        color: $orange;
+
+      .button {
+        margin-top: 2rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .comment-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 3fr .5fr;
+      grid-gap: 2rem;
+      align-items: center;
+      background: $white;
+      color: $black;
+      // border: 1px solid $light-color;
+      padding: 2rem;
+      border: 1px solid #DADDE1;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+
+      .date {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+
+      .user {
+        img {
+          border-radius: 100%;
+          width: 10rem;
+          margin: auto;
+        }
+
+        p {
+          margin-bottom: 0;
+          text-align: center;
+          color: $orange;
+          text-transform: capitalize;
+          font-weight: 500;
+        }
       }
     }
   }
@@ -581,7 +687,7 @@ footer {
   color: $white;
   font-family: 'Poppins';
 
-  .flex-2 > * {
+  .flex-2>* {
     width: 25rem;
   }
 

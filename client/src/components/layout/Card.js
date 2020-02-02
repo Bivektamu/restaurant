@@ -15,8 +15,6 @@ const Card = ({ from, items }) => {
       var { name, position, social } = item;
     }
 
-    console.log(social);
-
     const id = uuid.v4();
     return (
       <div key={id}>

@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import data from '../../data';
 
@@ -48,7 +48,7 @@ const SideBar = props => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink exact className='nav-link' to='/blogs'>
+              <NavLink exact className='nav-link' id='blogs-link' to='/blogs'>
                 <img src={icons[4].image} alt={icons[4].title} />
                 blogs
               </NavLink>

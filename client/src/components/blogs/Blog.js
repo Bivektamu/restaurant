@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import uuid from 'uuid';
+import { Link } from 'react-router-dom';
 
 const Blog = ({ blogs }) => {
   const postCard = blogs.map(
-    ({ image, date, title, description, category, comments, likes, user }) => {
-      const id = uuid.v4();
+    ({ image, date, title, description, category, comments, likes, id }) => {
       return (
         <div key={id}>
-          <div className='img-wrap'>
+          <Link to={`/blogs/${id}`} className='img-wrap'>
             <img src={image} alt={title} />
-          </div>
+          </Link>
           <div className='wrapper'>
             <p className='date'>
               <Moment format='DD'>{date}</Moment>
@@ -19,7 +18,9 @@ const Blog = ({ blogs }) => {
               <Moment format='MMMM'>{date}</Moment>
               {/* <Moment format='YYYY'>{date}</Moment> */}
             </p>
-            <h3 className='title'>{title}</h3>
+            <Link to={`/blogs/${id}`}>
+              <h3 className='title'>{title}</h3>
+            </Link>
             <p>
               {description
                 .split(' ')
@@ -33,9 +34,12 @@ const Blog = ({ blogs }) => {
                 {comments ? comments.length : '0'} Comments
               </span>
               <button className='button'>
-                {likes ? likes.length : '0'} Like
+                <span>{likes ? likes.length : '0'}</span>{' '}
+                <i className='fas fa-thumbs-up'></i>
               </button>
-              <button className='button'>Unlike</button>
+              <button className='button'>
+                <i className='fas fa-thumbs-down'></i>
+              </button>
             </div>
           </div>
         </div>

@@ -13,8 +13,6 @@ const Home = () => {
 
   const { icons, carousel, popular, offer, reservation, recent } = homeImg[0];
 
-  console.log(recent);
-
   return (
     <Fragment>
       <Banner icons={icons} slides={carousel} />
