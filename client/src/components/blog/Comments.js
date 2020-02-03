@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Comments = ({ comments }) => {
+const Comments = ({ blog }) => {
+  const { comments, likes } = blog;
   const Comment_Item = comments.map(({ id, date, text, user }) => {
     return (
       <div className='comment-wrapper' key={id}>
         <div className='user'>
-          <img src='/img/users/avatar.png' />
+          <img src='/img/users/avatar.png' alt={user} />
           <p>{user}</p>
         </div>
         <div>
@@ -32,6 +33,24 @@ const Comments = ({ comments }) => {
           <input type='submit' className='button' value='Submit' />
         </form>
 
+        <div className='like-wrapper'>
+          {likes.length > 0 ? (
+            <p>{likes.length} People liked this post.</p>
+          ) : (
+            <p>Like this Post. Hit thumbs up.</p>
+          )}
+
+          <div>
+            <button className='button'>
+              <i className='fas fa-thumbs-up'></i>
+            </button>
+            &nbsp;&nbsp;
+            <button className='button'>
+              <i className='fas fa-thumbs-down'></i>
+            </button>
+          </div>
+        </div>
+
         <h3 className='title'>{comments.length === 0 && 'No'} Comments</h3>
 
         {comments.length > 0 && Comment_Item}
@@ -40,6 +59,8 @@ const Comments = ({ comments }) => {
   );
 };
 
-Comments.propTypes = {};
+Comments.propTypes = {
+  blog: PropTypes.object.isRequired
+};
 
 export default Comments;

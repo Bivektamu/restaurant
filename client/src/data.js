@@ -97,7 +97,7 @@ export default [
       {
         image: '/img/home/b1.jpg',
         title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
+        date: '2019-02-19',
         category: 'food news',
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -105,7 +105,7 @@ export default [
       {
         image: '/img/home/b2.jpg',
         title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
+        date: '2019-02-19',
         category: 'food news',
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -113,7 +113,7 @@ export default [
       {
         image: '/img/home/b3.jpg',
         title: 'Lorem ipsum dolor sit amet',
-        date: '2019/02/19',
+        date: '2019-02-19',
         category: 'food news',
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -246,19 +246,19 @@ export default [
         title: 'lorem ipsum',
         image: '/img/blogs/b1.png',
         name: 'user',
-        date: '2019/02/19',
+        date: '2019-02-19',
         category: 'food news',
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         comments: [
           {
-            date: '2019/02/19',
+            date: '2019-02-19',
             id: 1,
             text: 'this is first comment',
             name: 'user'
           },
           {
-            date: '2019/02/19',
+            date: '2019-02-19',
             id: 2,
             text: 'this is second comment',
             name: 'user 2'
@@ -273,7 +273,7 @@ export default [
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         image: '/img/blogs/b2.png',
         name: 'user',
-        date: '2019/02/19',
+        date: '2019-02-19',
         category: 'food news',
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',

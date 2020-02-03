@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const BlogDetails = ({ blog }) => {
-  const {
-    title,
-    image,
-    date,
-    category,
-    description,
-    // comments,
-    likes
-  } = blog;
+  const { title, image, date, category, description } = blog;
 
   return (
     <section id='blog-details'>
@@ -22,13 +14,6 @@ const BlogDetails = ({ blog }) => {
       <div className='cat-likes'>
         <span>Posted on {date}</span>
         <span className='cat'>#{category}</span>
-        <button className='button'>
-          <span>{likes ? likes.length : '0'}</span>&nbsp;&nbsp;
-          <i className='fas fa-thumbs-up'></i>
-        </button>
-        <button className='button'>
-          <i className='fas fa-thumbs-down'></i>
-        </button>
       </div>
 
       <img src={image} alt={title} />
@@ -38,6 +23,8 @@ const BlogDetails = ({ blog }) => {
   );
 };
 
-BlogDetails.propTypes = {};
+BlogDetails.propTypes = {
+  blog: PropTypes.object.isRequired
+};
 
 export default BlogDetails;

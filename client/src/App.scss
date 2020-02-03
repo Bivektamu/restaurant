@@ -94,7 +94,8 @@ header {
             }
 
             &:hover,
-            &.active {
+            &.active,
+            &#blogs-link[aria-current='page'] {
               background: $orange;
               color: #fff;
               box-shadow: 0 20px 20px rgba(244, 47, 44, 0.1);
@@ -465,7 +466,8 @@ header {
   }
 }
 
-#booking-form {
+#booking-form,
+#contact-form {
   background: $light-color;
   width: 100%;
 
@@ -493,14 +495,19 @@ header {
       }
 
       input,
+      textarea,
       select {
         width: 100%;
         padding: 1.5rem 1rem;
-        border: 1px solid $light-color;
+        border: 1px solid $irish-blue;
         text-transform: capitalize;
         border-radius: 5px;
         color: $black;
         font-family: 'Poppins';
+      }
+
+      textarea {
+        height: 10rem;
       }
 
       option {
@@ -587,6 +594,12 @@ header {
     text-transform: capitalize;
     color: $orange;
   }
+
+  // button {
+  //   background: transparent;
+  //   border: none;
+  //   color: $dark-blue;
+  // }
 }
 
 #blog-details {
@@ -598,11 +611,20 @@ header {
   }
 
   .cat-likes {
-    max-width: 50rem;
     margin-bottom: 4rem;
+    display: block;
+
+    &>span:first-of-type {
+      border-right: 2px solid $black;
+      padding-right: 1rem;
+      margin-right: 1rem;
+      color: $black;
+    }
+
 
     button {
-      width: 9rem;
+      border: none;
+      background: transparent;
     }
   }
 
@@ -623,15 +645,12 @@ header {
 
     form {
       width: 100%;
-      margin-bottom: 6rem;
-      padding-bottom: 6rem;
-      border-bottom: 1px solid #DADDE1;
 
       textarea {
         width: 100%;
         max-width: 100%;
         padding: 2rem;
-        border: 1px solid #DADDE1;
+        border: 1px solid $irish-blue;
         border-radius: 5px;
         height: 15rem;
         color: $black;
@@ -645,6 +664,25 @@ header {
       }
     }
 
+    .like-wrapper {
+      border-top: 1px solid $irish-blue;
+      border-bottom: 1px solid $irish-blue;
+      margin: 6rem 0;
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .button {
+        // width: 9rem;
+
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
     .comment-wrapper {
       display: grid;
       grid-template-columns: 1fr 3fr .5fr;
@@ -654,7 +692,7 @@ header {
       color: $black;
       // border: 1px solid $light-color;
       padding: 2rem;
-      border: 1px solid #DADDE1;
+      border: 1px solid $irish-blue;
       border-radius: 5px;
       margin-bottom: 2rem;
 

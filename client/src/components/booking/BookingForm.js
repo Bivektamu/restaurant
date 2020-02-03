@@ -6,7 +6,7 @@ function BookingForm() {
     email: '',
     phone: '',
     date: '',
-    time: '',
+    time: null,
     person: null
   });
 
@@ -74,6 +74,7 @@ function BookingForm() {
         <div className='wrapper'>
           <label htmlFor='time'>pick time</label>
           <select required name='time' value={time} onChange={e => onChange(e)}>
+            <option></option>
             <option value='10'>10:00am</option>
             <option value='12'>12:00pm</option>
             <option value='14'>2:00pm</option>
@@ -92,6 +93,7 @@ function BookingForm() {
             value={person}
             onChange={e => onChange(e)}
           >
+            <option></option>
             <option value='2'>2</option>
             <option value='3'>3</option>
             <option value='4'>4</option>
