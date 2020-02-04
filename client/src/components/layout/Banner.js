@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-import Carousel from '../layout/Carousel';
+import Carousel from './Carousel';
 
-const Banner = ({ icons, slides }) => {
+import data from '../../data';
+
+const Banner = ({ from, title, slides, text }) => {
+  const homeData = data.filter(({ section }) => section === 'home');
+
+  const { icons, carousel } = homeData[0];
   return (
     <section className='hero-banner'>
       <div className='hero-wrapper'>
         <div className='hero-left'>
-          <h1 className='heading'>Food Menu</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <h1 className='heading'>{title}</h1>
+          {from === 'home' ? (
+            <Fragment>
+              <div className='d-sm-flex flex-wrap'>
+                <Link
+                  className='button button-hero button-shadow'
+                  to='/booking'
+                >
+                  Book Now
+                </Link>
+                {/* <Link className='hero-banner__video' to=''>
+                  Watch Video
+                </Link> */}
+              </div>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <p>{text}</p>
+            </Fragment>
+          )}
           <ul className='hero-info d-none d-lg-block'>
             <li>
               <img src={icons[0].image} alt='' />
@@ -58,7 +79,7 @@ const Banner = ({ icons, slides }) => {
           </ul>
         </div>
         <div className='hero-right'>
-          <Carousel slides={slides} />
+          <Carousel slides={slides ? slides : carousel} />
         </div>
       </div>
     </section>

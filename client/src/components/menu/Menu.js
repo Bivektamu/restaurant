@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 // import PropTypes from 'prop-types';
-import Banner from './Banner';
+import Banner from '../layout/Banner';
 import MenuCard from './MenuCard';
 import Reservation from '../layout/Reservation';
 
@@ -10,12 +10,15 @@ const Menu = () => {
   const homeImg = data.filter(({ section }) => section === 'home');
   const menuImg = data.filter(({ section }) => section === 'menu');
 
-  const { icons, carousel, reservation } = homeImg[0];
+  const { reservation } = homeImg[0];
   const { menus } = menuImg[0];
 
   return (
     <Fragment>
-      <Banner icons={icons} slides={carousel} />
+      <Banner
+        title='Food Menu'
+        text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      />
       <MenuCard menus={menus} />
       <Reservation reservation={reservation} />
     </Fragment>

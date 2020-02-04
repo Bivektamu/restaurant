@@ -11,6 +11,7 @@ import Blog from './components/blog/Blog';
 import Contact from './components/contact/Contact';
 import SideBar from './components/layout/SideBar';
 import Footer from './components/layout/Footer';
+import Default from './components/Default';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path='/blogs' exact component={Blogs} />
           <Route path='/blogs/:id' exact component={Blog} />
           <Route path='/contact' exact component={Contact} />
+          <Route component={Default} />
         </Switch>
       </main>
       <Footer />
