@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactModal from 'react-modal';
+import Popup from '../layout/Popup';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -7,19 +9,18 @@ function ContactForm() {
     phone: ''
   });
 
+  const [showModal, toggleModal] = useState(false);
+
   const { name, email, phone } = formData;
+
+  ReactModal.setAppElement('#root');
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(formData);
-    window.alert(
-      'Thank you for submitting your details ' +
-        name +
-        '. I will be in touch with you shortly. Kind Regards, Bivek Jang Gurung'
-    );
+    toggleModal(true);
   };
   return (
     <section id='contact-form'>
@@ -67,6 +68,16 @@ function ContactForm() {
           <input type='submit' className='button submit' value='Submit' />
         </form>
       </div>
+      <ReactModal
+        className='modal'
+        isOpen={showModal}
+        contentLabel='Minimal Modal Example'
+      >
+        <Popup
+          title='Thank You'
+          text={`Thank you for submitting your details ${name}. I will be in touch with you shortly.Kind Regards, Bivek Jang Gurung`}
+        />
+      </ReactModal>
     </section>
   );
 }

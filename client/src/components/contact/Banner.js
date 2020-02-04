@@ -1,7 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
 import Carousel from '../layout/Carousel';
 
 const Banner = ({ icons, slides }) => {
@@ -65,7 +62,5 @@ const Banner = ({ icons, slides }) => {
     </section>
   );
 };
-
-// Banner.propTypes = {};
 
 export default Banner;
