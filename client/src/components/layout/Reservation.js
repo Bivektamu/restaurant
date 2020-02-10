@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-import data from '../../data';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Reservation = () => {
-  const reservationData = data.filter(
-    ({ section }) => section === 'reservation'
-  );
-  const { image, title } = reservationData[0];
+import { getReservation } from '../../actions';
+import Spinner from './Spinner';
+
+const Reservation = ({
+  getReservation,
+  reservation: { loading, reservation }
+}) => {
+  useEffect(() => {
+    getReservation();
+  }, [getReservation]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  const { image, title } = reservation[0];
   return (
     <section id='reservation' style={{ backgroundImage: `url(${image})` }}>
       <div className='wrapper'>
@@ -22,4 +32,13 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+Reservation.propTypes = {
+  getReservation: PropTypes.func.isRequired,
+  reservation: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  reservation: state.reservation
+});
+
+export default connect(mapStateToProps, { getReservation })(Reservation);

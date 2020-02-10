@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import uuid from 'uuid';
+import { connect } from 'react-redux';
 
+import { getTestimonial } from '../../actions';
+
+import Spinner from '../layout/Spinner';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Testimonials = ({ testimonials }) => {
+const Testimonials = ({
+  getTestimonial,
+  testimonial: { loading, testimonial }
+}) => {
+  useEffect(() => {
+    getTestimonial();
+  }, [getTestimonial]);
+
+  if (loading) {
+    return <Spinner />;
+  }
   const settings = {
     swipeToSlide: true,
     dots: true,
@@ -20,7 +34,7 @@ const Testimonials = ({ testimonials }) => {
     autoplay: false
   };
 
-  const testimonials_Slides = testimonials.map(
+  const testimonials_Slides = testimonial.map(
     ({ image, name, position, description }) => {
       const id = uuid.v4();
 
@@ -51,4 +65,8 @@ const Testimonials = ({ testimonials }) => {
   );
 };
 
-export default Testimonials;
+const mapStateToProps = state => ({
+  testimonial: state.testimonial
+});
+
+export default connect(mapStateToProps, { getTestimonial })(Testimonials);

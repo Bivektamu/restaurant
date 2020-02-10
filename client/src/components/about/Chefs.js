@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '../layout/Card';
+import { connect } from 'react-redux';
 
-const Chefs = ({ chefs }) => {
+import { getChefs } from '../../actions';
+
+import Spinner from '../layout/Spinner';
+
+const Chefs = ({ getChefs, chefs: { loading, chefs } }) => {
+  useEffect(() => {
+    getChefs();
+  }, [getChefs]);
+
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <section id='chefs'>
       <h5 className='small-heading'>Our Chefs</h5>
@@ -11,4 +23,7 @@ const Chefs = ({ chefs }) => {
   );
 };
 
-export default Chefs;
+const mapStateToProps = state => ({
+  chefs: state.chefs
+});
+export default connect(mapStateToProps, { getChefs })(Chefs);

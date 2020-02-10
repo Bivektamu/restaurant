@@ -1,32 +1,49 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import data from '../../data';
+import { connect } from 'react-redux';
+
+import { getBlogById } from '../../actions';
+
 import BlogDetails from './BlogDetails';
 import Comments from './Comments';
+import Spinner from '../layout/Spinner';
 
-const Blog = ({ match }) => {
+const Blog = ({ getBlogById, blog: { loading, blog }, match }) => {
   useEffect(() => {
-    const Blogs_Link = document.getElementById('blogs-link');
-    Blogs_Link.classList.add('active');
-    return () => {
-      Blogs_Link.classList.remove('active');
-    };
-  }, []);
+    getBlogById(parseInt(match.params.id));
+    const link = document.getElementsByClassName('nav-link');
 
-  const blogsData = data.filter(({ section }) => section === 'blogs');
-  const { blogs } = blogsData[0];
-  const Blog_By_Id = blogs.filter(({ id }) => id === parseInt(match.params.id));
+    console.log(link);
+    console.log(link[4]);
+    // link.classList.add('active');
+    return () => {
+      // link.classList.remove('active');
+    };
+  }, [getBlogById, match.params.id]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  // console.log(document.getElementsByClassName('nav-link'));
+  // console.log(document.getElementById('blogs-link'));
 
   return (
     <Fragment>
-      <BlogDetails blog={Blog_By_Id[0]} />
-      <Comments blog={Blog_By_Id[0]} />
+      <BlogDetails blog={blog[0]} />
+      <Comments blog={blog[0]} />
     </Fragment>
   );
 };
 
 Blog.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  blog: PropTypes.object.isRequired,
+  getBlogById: PropTypes.func.isRequired
 };
 
-export default Blog;
+const mapStateToProps = state => ({
+  blog: state.blog
+});
+
+export default connect(mapStateToProps, { getBlogById })(Blog);

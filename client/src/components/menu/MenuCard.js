@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import uuid from 'uuid';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getMenus } from '../../actions';
+import Spinner from '../layout/Spinner';
 
-const Menus = ({ menus }) => {
+const MenuCard = ({ getMenus, menus: { loading, menus } }) => {
+  useEffect(() => {
+    getMenus();
+  }, [getMenus]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
   const mennuItems = menus.map(({ image, title, description, price }) => {
     const id = uuid.v4();
     return (
@@ -24,4 +36,12 @@ const Menus = ({ menus }) => {
   );
 };
 
-export default Menus;
+MenuCard.propTypes = {
+  menus: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  menus: state.menus
+});
+
+export default connect(mapStateToProps, { getMenus })(MenuCard);

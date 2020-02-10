@@ -1,15 +1,31 @@
-import React, { Fragment } from 'react';
-// import PropTypes from 'prop-types';
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { getBanner } from '../../actions';
 
 import Carousel from './Carousel';
+import Spinner from '../layout/Spinner';
 
-import data from '../../data';
+const Banner = ({
+  getBanner,
+  banner: { loading, banner },
+  from,
+  title,
+  slides,
+  text
+}) => {
+  useEffect(() => {
+    getBanner(from);
+  }, [getBanner, from]);
 
-const Banner = ({ from, title, slides, text }) => {
-  const homeData = data.filter(({ section }) => section === 'home');
+  if (loading) {
+    return <Spinner />;
+  }
 
-  const { icons, carousel } = homeData[0];
+  const { icons, carousel } = banner;
+
   return (
     <section className='hero-banner'>
       <div className='hero-wrapper'>
@@ -86,6 +102,12 @@ const Banner = ({ from, title, slides, text }) => {
   );
 };
 
-// Banner.propTypes = {};
+Banner.propTypes = {
+  banner: PropTypes.object.isRequired,
+  getBanner: PropTypes.func.isRequired
+};
+const mapStateToProps = state => ({
+  banner: state.banner
+});
 
-export default Banner;
+export default connect(mapStateToProps, { getBanner })(Banner);

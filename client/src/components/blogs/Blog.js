@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getBlogs } from '../../actions';
+import Spinner from '../layout/Spinner';
 
-const Blog = ({ blogs }) => {
+const Blog = ({ getBlogs, blogs: { loading, blogs } }) => {
+  useEffect(() => {
+    getBlogs();
+  }, [getBlogs]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
   const postCard = blogs.map(
     ({ image, date, title, description, category, comments, likes, id }) => {
       return (
@@ -16,7 +27,6 @@ const Blog = ({ blogs }) => {
               <Moment format='DD'>{date}</Moment>
               <br />
               <Moment format='MMMM'>{date}</Moment>
-              {/* <Moment format='YYYY'>{date}</Moment> */}
             </p>
             <Link to={`/blogs/${id}`}>
               <h3 className='title'>{title}</h3>
@@ -56,7 +66,12 @@ const Blog = ({ blogs }) => {
 };
 
 Blog.propTypes = {
-  blogs: PropTypes.array.isRequired
+  getBlogs: PropTypes.func.isRequired,
+  blogs: PropTypes.object.isRequired
 };
 
-export default Blog;
+const mapStateToProps = state => ({
+  blogs: state.blogs
+});
+
+export default connect(mapStateToProps, { getBlogs })(Blog);

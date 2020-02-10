@@ -1,7 +1,20 @@
-import React from 'react';
-import Card from '../layout/Card';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Blog = ({ recent }) => {
+import Card from '../layout/Card';
+import Spinner from '../layout/Spinner';
+
+import { getRecentBlogs } from '../../actions';
+
+const Blog = ({ getRecentBlogs, recent: { loading, recent } }) => {
+  useEffect(() => {
+    getRecentBlogs();
+  }, [getRecentBlogs]);
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <section id='blog'>
       <h5 className='small-heading'>Recent News</h5>
@@ -11,4 +24,12 @@ const Blog = ({ recent }) => {
   );
 };
 
-export default Blog;
+Blog.prototype = {
+  recent: PropTypes.object.isRequired,
+  getRecentBlogs: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  recent: state.recent
+});
+export default connect(mapStateToProps, { getRecentBlogs })(Blog);

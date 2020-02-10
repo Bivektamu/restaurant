@@ -36,6 +36,11 @@ p {
   color: $dark-blue;
 }
 
+.spinner {
+  width: 100%;
+  padding: 100px 0;
+}
+
 #main,
 footer {
   width: calc(100% - 18rem);
@@ -201,6 +206,7 @@ ul {
   height: 100vh;
   width: calc(100% - 18rem);
   background: rgba(255, 255, 255, 0.5);
+
   .modal-wrapper {
     position: relative;
     border: 1px solid $irish-blue;
@@ -213,7 +219,6 @@ ul {
     .heading {
       color: $orange;
     }
-    .title {
-    }
+
   }
 }

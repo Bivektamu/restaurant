@@ -39,36 +39,37 @@ export default [
   },
   {
     section: 'home',
+    banner: {
+      icons: [
+        {
+          image: '/img/banner/fas-service-icon.png',
+          title: 'fast service'
+        },
+        {
+          image: '/img/banner/fresh-food-icon.png',
+          title: 'fresh food'
+        },
+        {
+          image: '/img/banner/support-icon.png',
+          title: '24/7 support'
+        }
+      ],
+      carousel: [
+        {
+          image: '/img/home/slide1.jpg',
+          title: 'Slide'
+        },
+        {
+          image: '/img/home/slide2.jpg',
+          title: 'Slide'
+        },
+        {
+          image: '/img/home/slide3.jpg',
+          title: 'Slide'
+        }
+      ]
+    },
 
-    icons: [
-      {
-        image: '/img/banner/fas-service-icon.png',
-        title: 'fast service'
-      },
-      {
-        image: '/img/banner/fresh-food-icon.png',
-        title: 'fresh food'
-      },
-      {
-        image: '/img/banner/support-icon.png',
-        title: '24/7 support'
-      }
-    ],
-
-    carousel: [
-      {
-        image: '/img/home/slide1.jpg',
-        title: 'Slide'
-      },
-      {
-        image: '/img/home/slide2.jpg',
-        title: 'Slide'
-      },
-      {
-        image: '/img/home/slide3.jpg',
-        title: 'Slide'
-      }
-    ],
     popular: [
       {
         image: '/img/home/p1.jpg',
@@ -125,20 +126,37 @@ export default [
   {
     section: 'about',
 
-    carousel: [
-      {
-        image: '/img/about/slide1.jpg',
-        title: 'Slide'
-      },
-      {
-        image: '/img/about/slide2.jpg',
-        title: 'Slide'
-      },
-      {
-        image: '/img/about/slide3.jpg',
-        title: 'Slide'
-      }
-    ],
+    banner: {
+      icons: [
+        {
+          image: '/img/banner/fas-service-icon.png',
+          title: 'fast service'
+        },
+        {
+          image: '/img/banner/fresh-food-icon.png',
+          title: 'fresh food'
+        },
+        {
+          image: '/img/banner/support-icon.png',
+          title: '24/7 support'
+        }
+      ],
+      carousel: [
+        {
+          image: '/img/about/slide1.jpg',
+          title: 'Slide'
+        },
+        {
+          image: '/img/about/slide2.jpg',
+          title: 'Slide'
+        },
+        {
+          image: '/img/about/slide3.jpg',
+          title: 'Slide'
+        }
+      ]
+    },
+
     chefs: [
       {
         image: '/img/about/chef-1.jpg',

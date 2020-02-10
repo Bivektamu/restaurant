@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import store from './store';
+import { Provider } from 'react-redux';
 
 import Home from './components/home/Home';
 import About from './components/about/About';
@@ -15,21 +17,23 @@ import Default from './components/Default';
 
 export default function App() {
   return (
-    <Router>
-      <SideBar />
-      <main id='main'>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' exact component={About} />
-          <Route path='/menu' exact component={Menu} />
-          <Route path='/booking' exact component={Booking} />
-          <Route path='/blogs' exact component={Blogs} />
-          <Route path='/blogs/:id' exact component={Blog} />
-          <Route path='/contact' exact component={Contact} />
-          <Route component={Default} />
-        </Switch>
-      </main>
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <SideBar />
+        <main id='main'>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/about' exact component={About} />
+            <Route path='/menu' exact component={Menu} />
+            <Route path='/booking' exact component={Booking} />
+            <Route path='/blogs' exact component={Blogs} />
+            <Route path='/blogs/:id' exact component={Blog} />
+            <Route path='/contact' exact component={Contact} />
+            <Route component={Default} />
+          </Switch>
+        </main>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }

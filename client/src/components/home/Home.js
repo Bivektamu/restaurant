@@ -6,13 +6,7 @@ import Offer from './Offer';
 import Reservation from '../layout/Reservation';
 import Blog from './Blog';
 
-import data from '../../data';
-
 const Home = () => {
-  const homeImg = data.filter(({ section }) => section === 'home');
-
-  const { popular, offer, recent } = homeImg[0];
-
   return (
     <Fragment>
       <Banner
@@ -20,10 +14,10 @@ const Home = () => {
 most precious things'
         from='home'
       />
-      <Popular popular={popular} />
-      <Offer offer={offer} />
+      <Popular />
+      <Offer />
       <Reservation />
-      <Blog recent={recent} />
+      <Blog />
     </Fragment>
   );
 };

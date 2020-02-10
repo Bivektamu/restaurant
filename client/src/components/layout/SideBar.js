@@ -1,25 +1,31 @@
-import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import data from '../../data';
+import { getNavBar } from '../../actions';
 
-const SideBar = props => {
-  const navImg = data.filter(({ section }) => section === 'nav');
-  const { logo, icons } = navImg[0];
+import Spinner from '../layout/Spinner';
 
-  var header = null;
+const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
   useEffect(() => {
-    header = document.querySelector('header');
-    console.log(header);
-  }, []);
+    getNavBar();
+  }, [getNavBar]);
+
+  const headerRef = useRef(null);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  const { logo, icons } = navbar[0];
 
   const toggleNav = e => {
-    header.classList.toggle('active_nav');
+    headerRef.current.classList.toggle('active_nav');
   };
 
   return (
-    <header className='fixed-menu' id='header'>
+    <header ref={headerRef} className='fixed-menu' id='header'>
       <div className='menu-header'>
         <NavLink id='logo' to='/'>
           <img src={logo.image} alt={logo.title} />
@@ -109,4 +115,9 @@ const SideBar = props => {
 
 // SideBar.propTypes = {};
 
-export default SideBar;
+const mapStateToProps = state => ({
+  navbar: state.navbar,
+  getNavBar: PropTypes.func.isRequired
+});
+
+export default connect(mapStateToProps, { getNavBar })(SideBar);

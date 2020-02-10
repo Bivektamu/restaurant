@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getOffer } from '../../actions';
 
-const Offer = ({ offer }) => {
+import Spinner from '../layout/Spinner';
+
+const Offer = ({ getOffer, offer: { loading, offer } }) => {
+  useEffect(() => {
+    getOffer();
+  }, [getOffer]);
+
+  if (loading) {
+    return <Spinner />;
+  }
   const { title, description, image } = offer;
   return (
     <section id='offer'>
@@ -25,7 +36,12 @@ const Offer = ({ offer }) => {
 };
 
 Offer.propTypes = {
-  offer: PropTypes.object.isRequired
+  offer: PropTypes.object.isRequired,
+  getOffer: PropTypes.func.isRequired
 };
 
-export default Offer;
+const mapStateToProps = state => ({
+  offer: state.offer
+});
+
+export default connect(mapStateToProps, { getOffer })(Offer);

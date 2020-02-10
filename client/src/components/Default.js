@@ -4,7 +4,7 @@ function Default() {
   return (
     <section id='default'>
       <div id='bug'>
-        <img src='../img/bug.png' />
+        <img src='../img/bug.png' alt='bug' />
       </div>
       <div className='wrapper'>
         <h1 className='heading'>404</h1>
