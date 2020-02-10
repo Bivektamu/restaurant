@@ -11,7 +11,7 @@ import data from '../../data';
 const Home = () => {
   const homeImg = data.filter(({ section }) => section === 'home');
 
-  const { carousel, popular, offer, reservation, recent } = homeImg[0];
+  const { popular, offer, recent } = homeImg[0];
 
   return (
     <Fragment>
@@ -19,11 +19,10 @@ const Home = () => {
         title='Foods the
 most precious things'
         from='home'
-        slides={carousel}
       />
       <Popular popular={popular} />
       <Offer offer={offer} />
-      <Reservation reservation={reservation} />
+      <Reservation />
       <Blog recent={recent} />
     </Fragment>
   );

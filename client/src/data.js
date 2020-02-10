@@ -33,6 +33,11 @@ export default [
     ]
   },
   {
+    section: 'reservation',
+    image: '/img/home/reservation.jpg',
+    title: 'MLorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
     section: 'home',
 
     icons: [
@@ -89,10 +94,7 @@ export default [
       title: 'Italian Pizza Offer',
       description: '50% OFF'
     },
-    reservation: {
-      image: '/img/home/reservation.jpg',
-      title: 'MLorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },
+
     recent: [
       {
         image: '/img/home/b1.jpg',

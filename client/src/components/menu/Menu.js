@@ -7,10 +7,8 @@ import Reservation from '../layout/Reservation';
 import data from '../../data';
 
 const Menu = () => {
-  const homeImg = data.filter(({ section }) => section === 'home');
   const menuImg = data.filter(({ section }) => section === 'menu');
 
-  const { reservation } = homeImg[0];
   const { menus } = menuImg[0];
 
   return (
@@ -20,7 +18,7 @@ const Menu = () => {
         text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       />
       <MenuCard menus={menus} />
-      <Reservation reservation={reservation} />
+      <Reservation />
     </Fragment>
   );
 };

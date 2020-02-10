@@ -16,7 +16,7 @@ const Carousel = ({ slides }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: false
+    autoplay: true
   };
 
   const carousel_Slides = slides.map(({ image, title }) => {

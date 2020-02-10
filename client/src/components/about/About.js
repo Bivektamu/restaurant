@@ -8,12 +8,9 @@ import Reservation from '../layout/Reservation';
 import data from '../../data';
 
 const About = () => {
-  const home_data = data.filter(({ section }) => section === 'home');
-
   const about_data = data.filter(({ section }) => section === 'about');
 
   const { carousel, chefs, testimonials } = about_data[0];
-  const { reservation } = home_data[0];
 
   return (
     <Fragment>
@@ -24,7 +21,7 @@ const About = () => {
       />
       <Chefs chefs={chefs} />
       <Testimonials testimonials={testimonials} />
-      <Reservation reservation={reservation} />
+      <Reservation />
     </Fragment>
   );
 };
