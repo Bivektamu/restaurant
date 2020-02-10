@@ -7,22 +7,22 @@ import { getNavBar } from '../../actions';
 
 import Spinner from '../layout/Spinner';
 
-const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
+const SideBar = ({ getNavBar, setRef, navbar: { loading, navbar } }) => {
   useEffect(() => {
     getNavBar();
   }, [getNavBar]);
 
   const headerRef = useRef(null);
 
+  const toggleNav = e => {
+    headerRef.current.classList.toggle('active_nav');
+  };
+
   if (loading) {
     return <Spinner />;
   }
 
   const { logo, icons } = navbar[0];
-
-  const toggleNav = e => {
-    headerRef.current.classList.toggle('active_nav');
-  };
 
   return (
     <header ref={headerRef} className='fixed-menu' id='header'>
@@ -52,7 +52,6 @@ const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
             <li className='nav-item'>
               <NavLink
                 onClick={e => toggleNav(e)}
-                exact
                 className='nav-link'
                 activeClassName='active'
                 to='/about'
@@ -63,7 +62,6 @@ const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
             <li className='nav-item'>
               <NavLink
                 onClick={e => toggleNav(e)}
-                exact
                 className='nav-link'
                 to='/menu'
               >
@@ -74,7 +72,6 @@ const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
             <li className='nav-item'>
               <NavLink
                 onClick={e => toggleNav(e)}
-                exact
                 className='nav-link'
                 to='/booking'
               >
@@ -85,7 +82,6 @@ const SideBar = ({ getNavBar, navbar: { loading, navbar } }) => {
             <li className='nav-item'>
               <NavLink
                 onClick={e => toggleNav(e)}
-                exact
                 className='nav-link'
                 id='blogs-link'
                 to='/blogs'

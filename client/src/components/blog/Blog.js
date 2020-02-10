@@ -11,22 +11,11 @@ import Spinner from '../layout/Spinner';
 const Blog = ({ getBlogById, blog: { loading, blog }, match }) => {
   useEffect(() => {
     getBlogById(parseInt(match.params.id));
-    const link = document.getElementsByClassName('nav-link');
-
-    console.log(link);
-    console.log(link[4]);
-    // link.classList.add('active');
-    return () => {
-      // link.classList.remove('active');
-    };
   }, [getBlogById, match.params.id]);
 
   if (loading) {
     return <Spinner />;
   }
-
-  // console.log(document.getElementsByClassName('nav-link'));
-  // console.log(document.getElementById('blogs-link'));
 
   return (
     <Fragment>

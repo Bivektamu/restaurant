@@ -28,7 +28,7 @@ const Blog = ({ getBlogs, blogs: { loading, blogs } }) => {
               <br />
               <Moment format='MMMM'>{date}</Moment>
             </p>
-            <Link to={`/blogs/${id}`}>
+            <Link to={`/blog/${id}`}>
               <h3 className='title'>{title}</h3>
             </Link>
             <p>
