@@ -1,8 +1,8 @@
 # RESTAURANT WEB APP
 
-This project is a resturant web application for retaurant owners. This projet uses modern, elegant, responsive and clean design through which restaurant owners can make their online presence and brand their retaurant to attract potential online customers.
+This project is a resturant web application for retaurant owners. This project uses modern, elegant, responsive and clean design through which restaurant owners can make their online presence and brand their restaurant to attract potential online customers.
 
-This project is created using React Js library. Other web tools includes HTML5, Sass, JavaScript, ES6, react carousel and git.
+This project is created using React Js library with Redux state management library. Other web tools includes HTML5, Sass, JavaScript, ES6, react carousel and git.
 
 ## Installation
 
